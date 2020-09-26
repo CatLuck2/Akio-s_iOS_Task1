@@ -12,10 +12,14 @@ jobs:
     runs-on: macos-latest
 
     steps:
-      - name: Slack Notification
-        uses: CatLuck2/Akio-s_iOS_Task1@master
-        env:
-          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
-        with:
-           payload: |  
-              { "text": "Star: ${{ github.event.repository.stargazers_count }} ${{ github.event.repository.html_url }}" }
+    - uses: actions/checkout@v2
+    - name: Slack success notification
+      run: | 
+        curl -X POST --data-urlencode "payload={\"channel\": \"#30_開発\", \"username\": \"webhookbot\", \"text\": \"これは webhookbot という名のボットから #30_開発 に投稿されています。\", \"icon_emoji\": \":ghost:\"}" https://hooks.slack.com/services/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
+#       - name: Slack Notification
+#         uses: CatLuck2/Akio-s_iOS_Task1@master
+#         env:
+#           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+#         with:
+#            payload: |  
+#               { "text": "Star: ${{ github.event.repository.stargazers_count }} ${{ github.event.repository.html_url }}" }
