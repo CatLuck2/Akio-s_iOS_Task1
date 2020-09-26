@@ -13,15 +13,8 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-#     - name: Select Xcode version # Xcode 11.2 を使う
-#       run: sudo xcode-select -s '/Applications/Xcode_11.2.app/Contents/Developer'
-#     - name: Show Xcode version
-#       run: xcodebuild -version
-#     - name: Build # シミュレーター向けにビルド
-#       run: xcodebuild -sdk iphonesimulator -configuration Debug build 
       - name: Slack Notification
         uses: CatLuck2/Akio-s_iOS_Task1@master
-#         uses: actions/checkout@v2
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
         with:
