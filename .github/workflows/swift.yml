@@ -15,7 +15,7 @@ jobs:
     - uses: actions/checkout@v2
     - name: Slack success notification
       run: | 
-        curl -X POST --data-urlencode "payload={\"channel\": \"#30_開発\", \"username\": \"webhookbot\", \"text\": \"これは webhookbot という名のボットから #30_開発 に投稿されています。\", \"icon_emoji\": \":ghost:\"}" https://hooks.slack.com/services/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
+        curl -X POST --data-urlencode 'payload={"text": ":tada::tada::tada:${{github.repository}}: Build and Test succeeded！:tada::tada::tada:"}' ${{secrets.SLACK_WEBHOOK_URL}}
 #       - name: Slack Notification
 #         uses: CatLuck2/Akio-s_iOS_Task1@master
 #         env:
