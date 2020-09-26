@@ -12,7 +12,6 @@ jobs:
     runs-on: macos-latest
 
     steps:
-      - uses: actions/checkout@v2
       - name: Slack Notification
         uses: CatLuck2/Akio-s_iOS_Task1@master
         env:
