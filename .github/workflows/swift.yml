@@ -23,6 +23,6 @@ jobs:
 #         uses: CatLuck2/Akio-s_iOS_Task1@master
         uses: actions/checkout@v2
         env:
-          INCOMING_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
         with:
           text: Hello, Slack!
