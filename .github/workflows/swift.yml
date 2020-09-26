@@ -25,4 +25,4 @@ jobs:
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
         with:
-          text: Hello, Slack!
+          payload={"text": "これは、チャンネル内のテキスト行です。そしてもう1つテキスト行があります。"}
