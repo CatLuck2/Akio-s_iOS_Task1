@@ -20,7 +20,8 @@ jobs:
 #     - name: Build # シミュレーター向けにビルド
 #       run: xcodebuild -sdk iphonesimulator -configuration Debug build 
       - name: Slack Notification
-        uses: CatLuck2/Akio-s_iOS_Task1@master
+#         uses: CatLuck2/Akio-s_iOS_Task1@master
+        uses: actions/checkout@v2
         env:
           INCOMING_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
         with:
